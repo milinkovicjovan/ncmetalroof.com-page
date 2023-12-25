@@ -220,7 +220,35 @@
       background-repeat: no-repeat;
       background-size: cover;
       min-height: 600px;
-      padding: 0 10px;
+      padding: 50px 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .maps-section__wrapper {
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 300px;
+      padding: 0 50px;
+    }
+
+    .maps-section__contact-header {
+      font-size: 40px;
+      color: #000000;
+      font-weight: 800;
+    }
+
+    .maps-section__second-header {
+      font-size: 40px;
+      color: #000000;
+      font-weight: 800;
+    }
+
+    .maps-section__form-wrapper {
+      display: flex;
+      flex-direction: column;
     }
 
     .footer {
@@ -438,9 +466,9 @@
         </div>
       </section>
       <section class="maps-section">
-        <div>
+        <div class="maps-section__wrapper">
           <div>
-            <h1>CONTACT ADDRESS</h1>
+            <h1 class="maps-section__contact-header">CONTACT ADDRESS</h1>
             <div>
               <span>M</span>
               <span>984-289-2585 LOCAL</span>
@@ -458,7 +486,25 @@
               <span>5301 HILLSBOROUGH ST STE 207 RALEIGH NC 27606</span>
             </div>
           </div>
-          <div></div>
+          <div>
+            <h1 class="maps-section__second-header">GET IN TOUCH</h1>
+            <form class="maps-section__form-wrapper">
+              <input type="text" id="name2" name="name2" placeholder="Name" />
+              <input
+                type="text"
+                id="email2"
+                name="email2"
+                placeholder="Email"
+              />
+              <textarea
+                type="text"
+                id="message2"
+                name="message"
+                placeholder="Message"
+              ></textarea>
+              <button class="maps-section__submit-button">SUBMIT</button>
+            </form>
+          </div>
         </div>
       </section>
       <footer class="footer">
