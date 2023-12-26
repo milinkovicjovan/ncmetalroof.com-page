@@ -219,7 +219,7 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      min-height: 600px;
+      /* min-height: 600px; */
       padding: 50px 10px;
       display: flex;
       justify-content: center;
@@ -229,26 +229,74 @@
       background-color: #ffffff;
       display: flex;
       justify-content: center;
+      flex-direction: row;
       align-items: center;
-      gap: 300px;
-      padding: 0 50px;
+      gap: 100px;
+      padding: 40px 50px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .maps-section__info-wrapper {
+      min-width: 50%;
+    }
+
+    .maps-section__form-wrapper {
+      min-width: 40%;
     }
 
     .maps-section__contact-header {
       font-size: 40px;
       color: #000000;
       font-weight: 800;
+      margin-bottom: 35px;
+    }
+
+    .maps-section__contact-information {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-size: 16px;
+      font-weight: 600;
+      max-width: 300px;
     }
 
     .maps-section__second-header {
       font-size: 40px;
       color: #000000;
       font-weight: 800;
+      margin-bottom: 10px;
     }
 
     .maps-section__form-wrapper {
       display: flex;
       flex-direction: column;
+      gap: 10px;
+    }
+
+    #name2,
+    #email2,
+    #message2 {
+      outline: 0;
+      border-width: 0 0 1px;
+      border-color: #000000;
+      width: 100%;
+      border-radius: 0;
+      font-size: 14px;
+      padding: 16px 16px 16px 0;
+    }
+
+    .maps-section__submit-button {
+      background-color: #81c784;
+      font-size: 16px;
+      border-radius: 18px;
+      padding: 10px 30px;
+      color: #02334e;
+      font-weight: 800;
+      border: 0;
+      margin-top: 10px;
+      max-width: 150px;
     }
 
     .footer {
@@ -347,6 +395,16 @@
     }
 
     @media (max-width: 820px) {
+      .maps-section__wrapper {
+        flex-direction: column;
+        gap: 50px;
+        padding: 50px 25px;
+        text-align: center;
+      }
+
+      .maps-section__contact-information {
+        max-width: 500px;
+      }
       .footer-info {
         flex-direction: column;
         text-align: center;
@@ -467,26 +525,28 @@
       </section>
       <section class="maps-section">
         <div class="maps-section__wrapper">
-          <div>
+          <div class="maps-section__info-wrapper">
             <h1 class="maps-section__contact-header">CONTACT ADDRESS</h1>
-            <div>
-              <span>M</span>
-              <span>984-289-2585 LOCAL</span>
-            </div>
-            <div>
-              <span>M</span>
-              <span>866-733-5811 TOLL FREE</span>
-            </div>
-            <div>
-              <span>m</span>
-              <span>INFO@METALROOFNC.COM</span>
-            </div>
-            <div>
-              <span>m</span>
-              <span>5301 HILLSBOROUGH ST STE 207 RALEIGH NC 27606</span>
+            <div class="maps-section__contact-information">
+              <div>
+                <span>M</span>
+                <span>984-289-2585 LOCAL</span>
+              </div>
+              <div>
+                <span>M</span>
+                <span>866-733-5811 TOLL FREE</span>
+              </div>
+              <div>
+                <span>m</span>
+                <span>INFO@METALROOFNC.COM</span>
+              </div>
+              <div>
+                <span>m</span>
+                <span>5301 HILLSBOROUGH ST STE 207 RALEIGH NC 27606</span>
+              </div>
             </div>
           </div>
-          <div>
+          <div class="maps-section__form-wrapper">
             <h1 class="maps-section__second-header">GET IN TOUCH</h1>
             <form class="maps-section__form-wrapper">
               <input type="text" id="name2" name="name2" placeholder="Name" />
@@ -500,6 +560,7 @@
                 type="text"
                 id="message2"
                 name="message"
+                rows="8"
                 placeholder="Message"
               ></textarea>
               <button class="maps-section__submit-button">SUBMIT</button>
