@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
   <style>
@@ -27,20 +33,10 @@
     }
 
     .header-wrapper {
-      background: linear-gradient(-60deg, #02334e 65%, transparent 50%),
-        linear-gradient(80deg, #034c75 50%, transparent 0%);
-      position: relative;
-    }
-
-    .header-wrapper::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 66.65%;
-      height: 10px;
-      background-color: green;
-      border-top-left-radius: 50px;
+      background-image: url(assets/Top-bg.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
     .header {
@@ -48,15 +44,22 @@
       justify-content: space-between;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 20px 0;
+      padding: 20px 10px;
     }
 
     .header-info {
       display: flex;
+      flex-direction: row;
       align-items: center;
-      gap: 20px;
+      gap: 50px;
       margin-right: 200px;
       color: #ffffff;
+    }
+
+    .header-info-phone-email {
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
 
     .hero-section__wrapper {
@@ -70,7 +73,7 @@
     }
 
     .hero-section {
-      background-image: url(assets/interlock-metal-roofing-raleigh-nc-deep-charcoal-slate-roof_09.jpg);
+      background-image: url(assets/Main-Picture.png);
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -112,20 +115,34 @@
       align-items: center;
       padding: 4px 0;
       gap: 120px;
-      background: linear-gradient(120deg, #81c784 80%, transparent 50%),
-        linear-gradient(-60deg, #02334e 20%, transparent 0%);
+      background-image: url(assets/bg.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
     .hero-section__info-quote,
     .hero-section__info-site {
+      display: flex;
+      align-items: center;
       border-right: 1px solid black;
       padding-right: 80px;
       padding-top: 11px;
       padding-bottom: 11px;
+      gap: 20px;
+      max-height: 40px;
+    }
+
+    .hero-section__info-financing {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      max-height: 40px;
     }
 
     .hero-section__links {
       text-decoration: none;
+      font-weight: 600;
       color: #000000;
     }
 
@@ -140,16 +157,19 @@
     }
 
     .contact-section {
-      background: url(assets/interlock-metal-roofing-raleigh-nc-deep-charcoal-slate-roof_09.jpg);
+      background: url(assets/Main-Picture.png);
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
       padding: 0 10px;
+      position: relative;
     }
 
     .contact-section__wrapper {
       max-width: 1200px;
       margin: 0 auto;
+      position: relative;
+      z-index: 100;
     }
     .contact-section__header {
       font-size: 40px;
@@ -174,6 +194,16 @@
       max-width: 650px;
     }
 
+    .contact-section__image {
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      top: 0;
+      height: 100%;
+      object-fit: cover;
+      padding: 10px 10px;
+    }
+
     .contact-section__inputs {
       display: flex;
       align-items: center;
@@ -190,6 +220,7 @@
       font-weight: 800;
       border: 0;
       margin-top: 10px;
+      max-width: 150px;
     }
 
     .contact-form__info {
@@ -200,6 +231,18 @@
       color: #ffffff;
       font-weight: 600;
       padding-bottom: 30px;
+    }
+
+    .contact-form__icon-text {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-info__social-media {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .reviews-section {
@@ -220,6 +263,15 @@
       max-width: 220px;
     }
 
+    .reviews-section__rating {
+      margin-top: 30px;
+    }
+
+    .reviews-section__trust {
+      color: #000000;
+      font-weight: 600;
+    }
+
     .reviews-section__pricing-button {
       background-color: #02334e;
       font-size: 16px;
@@ -234,6 +286,7 @@
     .slider-wrapper {
       background-color: #eee;
     }
+
     .slider-container {
       display: flex;
       overflow: hidden;
@@ -250,7 +303,14 @@
     .slide {
       flex: 0 0 100%;
       box-sizing: border-box;
-      padding: 100px 80px;
+      padding: 100px 80px 70px 80px;
+      position: relative;
+    }
+
+    .slider-wrapper__apostrophe {
+      position: absolute;
+      top: 0;
+      right: 120px;
     }
 
     .slider-header {
@@ -281,11 +341,24 @@
       border: none;
       margin: 0 5px;
       cursor: pointer;
-      background-color: #02334e; /* Non-active state color */
+      background-color: #02334e;
     }
 
     .control-button.active {
-      background-color: #81c784; /* Active state color */
+      background-color: #81c784;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      height: auto;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
 
     .reviews-section__score-wrapper {
@@ -294,12 +367,11 @@
     }
 
     .maps-section {
-      background: url(assets/Screenshot\ from\ 2023-12-25\ 22-25-28.png);
+      background: url(assets/Map.png);
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      /* min-height: 600px; */
-      padding: 50px 10px;
+      padding: 70px 10px;
       display: flex;
       justify-content: center;
     }
@@ -341,6 +413,12 @@
       max-width: 300px;
     }
 
+    .maps-section__info {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
     .maps-section__second-header {
       font-size: 40px;
       color: #000000;
@@ -364,6 +442,14 @@
       border-radius: 0;
       font-size: 14px;
       padding: 16px 16px 16px 0;
+    }
+
+    #name2::placeholder,
+    #email2::placeholder,
+    #message2::placeholder {
+      color: #000000;
+      font-weight: 600;
+      font-size: 16px;
     }
 
     .maps-section__submit-button {
@@ -431,11 +517,21 @@
 
     .footer-info__copyright-information {
       display: flex;
+      flex-direction: row;
       align-items: center;
       padding-top: 30px;
     }
 
     .footer-info__copyright-text {
+      font-weight: 600;
+      border-right: 2px #ffffff solid;
+    }
+
+    .footer-info__copyright-number {
+      font-weight: 600;
+    }
+
+    .footer-info__copyright {
       font-weight: 600;
       padding-top: 5px;
     }
@@ -456,6 +552,10 @@
         gap: 50px;
       }
 
+      .image-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
       .slider {
         flex-wrap: wrap;
         flex-direction: column;
@@ -463,7 +563,12 @@
         max-height: 500px;
       }
       .slide {
-        padding: 50px 30px;
+        padding: 70px 30px 50px 30px;
+      }
+
+      .slider-wrapper__apostrophe {
+        max-height: 60px;
+        right: 30px;
       }
     }
 
@@ -511,6 +616,30 @@
       .footer-info__local-area {
         padding-left: 0;
       }
+      .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .header-info {
+        gap: 20px;
+        margin-right: 0;
+      }
+    }
+    @media (max-width: 550px) {
+      .header-info {
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 500px) {
+      .footer-info__copyright-information {
+        flex-direction: column;
+      }
+
+      .footer-info__copyright-text {
+        border: 0;
+      }
     }
   </style>
   <body>
@@ -518,17 +647,17 @@
       <header class="header-wrapper">
         <div class="header">
           <div>
-            <img style="max-height: 50px" src="assets/logo.webp" />
+            <img style="max-height: 50px" src="assets/Logo.png" />
           </div>
           <div class="header-info">
-            <div>
-              <img />
+            <div class="header-info-phone-email">
+              <img style="max-height: 20px" src="assets/Phone-Icon1.png" />
               <a href="tel:+1-123-456-7890" class="phone-number"
                 >(123) 456 7890</a
               >
             </div>
-            <div>
-              <img />
+            <div class="header-info-phone-email">
+              <img style="max-height: 18px" src="assets/Mail-Icon1.png" />
               <span>info@youremail.com</span>
             </div>
           </div>
@@ -548,24 +677,25 @@
         </div>
         <div class="hero-section__info-part">
           <div class="hero-section__info-quote">
-            <span>M</span>
+            <img style="max-height: 30px" src="assets/Request-Quote-Icon.png" />
             <a class="hero-section__links" href="#">Request a Free Quote >></a>
           </div>
           <div class="hero-section__info-site">
-            <span>M</span>
+            <img style="max-height: 30px" src="assets/Coorporate-Icom.png" />
             <a class="hero-section__links" href="#">Coorporate Site >></a>
           </div>
           <div class="hero-section__info-financing">
-            <span>M</span>
+            <img style="max-height: 30px" src="assets/Apply-Icon.png" />
             <a class="hero-section__links" href="#">Apply for Financing >></a>
           </div>
         </div>
       </section>
       <section class="contact-section">
+        <img class="contact-section__image" src="assets/Photo.png" />
         <div class="contact-section__wrapper">
           <div>
-            <h1 class="contact-section__header">CONTACT / APPT REQUEST</h1>
             <form class="contact-section__form">
+              <h1 class="contact-section__header">CONTACT / APPT REQUEST</h1>
               <div class="contact-section__inputs">
                 <input type="text" id="name" name="name" placeholder="Name" />
                 <input
@@ -581,12 +711,13 @@
                 rows="15"
                 placeholder="Message"
               ></textarea>
+              <button class="contact-form__submit-button">SUBMIT</button>
             </form>
-            <button class="contact-form__submit-button">SUBMIT</button>
           </div>
           <div class="contact-form__info">
             <div>
-              <div>
+              <div class="contact-form__icon-text">
+                <img src="assets/Phone-Icon.png" />
                 <span>
                   <a href="tel:984-289-2585" class="phone-number"
                     >984-289-2585</a
@@ -594,7 +725,8 @@
                   LOCAL
                 </span>
               </div>
-              <div>
+              <div class="contact-form__icon-text">
+                <img src="assets/Phone-Icon.png" />
                 <span>
                   <a href="tel:866-733-5811" class="phone-number"
                     >866-733-5811</a
@@ -604,14 +736,25 @@
               </div>
             </div>
             <div>
-              <div>
+              <div class="contact-form__icon-text">
+                <img style="max-height: 19px" src="assets/Mail-Icon.png" />
                 <span> INFO@METALROOFNC.COM </span>
               </div>
-              <div>
+              <div class="contact-form__icon-text">
+                <img
+                  style="max-height: 19px; margin-left: 5px"
+                  src="assets/Address-Icon.png"
+                />
                 <span> 5301 HILLSBOROUGH ST STE 207 RALEIGH NC 27606 </span>
               </div>
             </div>
-            <div>SOCIAL MEDIA</div>
+            <div class="contact-info__social-media">
+              <img src="assets/FB-Icon.png" />
+              <img src="assets/X-Icon.png" />
+              <img src="assets/IG-Icon.png" />
+              <img src="assets/LinkedIn-Icon.png" />
+              <img src="assets/Youtube-Icon.png" />
+            </div>
           </div>
         </div>
       </section>
@@ -621,7 +764,10 @@
             <h1 class="reviews-section__header">
               WHAT THEY ARE TALKING ABOUT US
             </h1>
-            <span>TRUST SCORE 5.0</span>
+            <div class="reviews-section__rating">
+              <span class="reviews-section__trust">TRUST SCORE 5.0</span>
+              <img style="margin-top: 5px" src="assets/5-Stars.png" />
+            </div>
             <button class="reviews-section__pricing-button">
               GET PRICING NOW
             </button>
@@ -630,6 +776,10 @@
             <div class="slider-container">
               <div class="slider">
                 <div class="slide">
+                  <img
+                    class="slider-wrapper__apostrophe"
+                    src="assets/Apostrphe.png"
+                  />
                   <h1 class="slider-header">
                     TWO PROJECTS DONE BY ERIE, BOTH EXCELLENT!
                   </h1>
@@ -642,6 +792,10 @@
                   <p class="slider-author">- Blake B</p>
                 </div>
                 <div class="slide">
+                  <img
+                    class="slider-wrapper__apostrophe"
+                    src="assets/Apostrphe.png"
+                  />
                   <h1 class="slider-header">
                     TWO PROJECTS DONE BY ERIE, BOTH EXCELLENT!
                   </h1>
@@ -654,6 +808,10 @@
                   <p class="slider-author">- Blake B</p>
                 </div>
                 <div class="slide">
+                  <img
+                    class="slider-wrapper__apostrophe"
+                    src="assets/Apostrphe.png"
+                  />
                   <h1 class="slider-header">
                     TWO PROJECTS DONE BY ERIE, BOTH EXCELLENT!
                   </h1>
@@ -674,15 +832,40 @@
             </div>
           </div>
         </div>
-        <div>gallery</div>
+        <div class="image-grid">
+          <a target="_blank" href="assets/Photo-1.png">
+            <img src="assets/Photo-1.png" />
+          </a>
+          <a target="_blank" href="assets/Photo-2.png">
+            <img src="assets/Photo-2.png" />
+          </a>
+          <a target="_blank" href="assets/Photo-3.png">
+            <img src="assets/Photo-3.png" />
+          </a>
+          <a target="_blank" href="assets/Photo-4.png">
+            <img src="assets/Photo-4.png" />
+          </a>
+          <a target="_blank" href="assets/Photo-5.png">
+            <img src="assets/Photo-5.png" />
+          </a>
+          <a target="_blank" href="assets/Photo-6.png">
+            <img src="assets/Photo-6.png" />
+          </a>
+          <a target="_blank" href="assets/Photo-7.png">
+            <img src="assets/Photo-7.png" />
+          </a>
+          <a target="_blank" href="assets/Photo-8.png">
+            <img src="assets/Photo-8.png" />
+          </a>
+        </div>
       </section>
       <section class="maps-section">
         <div class="maps-section__wrapper">
           <div class="maps-section__info-wrapper">
             <h1 class="maps-section__contact-header">CONTACT ADDRESS</h1>
             <div class="maps-section__contact-information">
-              <div>
-                <span>M</span>
+              <div class="maps-section__info">
+                <img src="assets/Phone-icon3.png" />
                 <span>
                   <a href="tel:984-289-2585" class="phone-number-black"
                     >984-289-2585</a
@@ -690,8 +873,8 @@
                   LOCAL</span
                 >
               </div>
-              <div>
-                <span>M</span>
+              <div class="maps-section__info">
+                <img src="assets/Phone-icon3.png" />
                 <span>
                   <a href="tel:866-733-5811" class="phone-number-black"
                     >866-733-5811</a
@@ -699,12 +882,12 @@
                   TOLL FREE</span
                 >
               </div>
-              <div>
-                <span>m</span>
+              <div class="maps-section__info">
+                <img src="assets/Mail-icon3.png" />
                 <span>INFO@METALROOFNC.COM</span>
               </div>
-              <div>
-                <span>m</span>
+              <div class="maps-section__info">
+                <img src="assets/Address-icon3.png" />
                 <span>5301 HILLSBOROUGH ST STE 207 RALEIGH NC 27606</span>
               </div>
             </div>
@@ -735,12 +918,7 @@
         <div class="footer-wrapper">
           <div class="footer-info">
             <div class="footer-info__gap">
-              <h1 class="footer-info__heading"><i>We're Local!</i></h1>
-              <p class="footer-info__local-help">
-                <i>
-                  Get help from our local service team and local installers
-                </i>
-              </p>
+              <img src="assets/We're-Local.png" />
             </div>
             <div class="footer-info__local-area">
               <h3 class="footer-info__local-heading">
@@ -757,12 +935,14 @@
           </div>
           <div class="footer-info__copyright-wrapper">
             <div class="footer-info__copyright-information">
-              <p>Erie Home |&nbsp;</p>
-              <p>3516 Granite Circle Toledo, OH 43617 |&nbsp;</p>
-              <p>(866) 574-4459</p>
+              <p class="footer-info__copyright-text">Erie Home &nbsp;</p>
+              <p class="footer-info__copyright-text">
+                &nbsp; 3516 Granite Circle Toledo, OH 43617 &nbsp;
+              </p>
+              <p class="footer-info__copyright-number">&nbsp;(866) 574-4459</p>
             </div>
             <div>
-              <p class="footer-info__copyright-text">
+              <p class="footer-info__copyright">
                 COPYRIGHT &copy; 2023 ERIE HOME - ALL RIGHTS RESERVED.
               </p>
             </div>
@@ -781,23 +961,21 @@
       const newPosition = -index * slideWidth;
       slider.style.transform = `translateX(${newPosition}px)`;
 
-      // Update button styles based on active state
       controlButtons.forEach((button, i) => {
         button.classList.toggle("active", i === index);
       });
     }
 
     function nextSlide() {
-      currentIndex = (currentIndex + 1) % 3; // Assuming 3 slides
+      currentIndex = (currentIndex + 1) % 3;
       showSlide(currentIndex);
     }
 
     function prevSlide() {
-      currentIndex = (currentIndex - 1 + 3) % 3; // Assuming 3 slides
+      currentIndex = (currentIndex - 1 + 3) % 3;
       showSlide(currentIndex);
     }
 
-    // Initialize with the first button as active
     showSlide(currentIndex);
   </script>
 </html>
